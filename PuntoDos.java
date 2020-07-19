@@ -1,5 +1,3 @@
-import java.util.Arrays;
-import java.util.List;
 import java.util.Scanner;
 
 public class PuntoDos {
@@ -25,7 +23,7 @@ public class PuntoDos {
                 myObj.next();
             }
             cantDenoms = myObj.nextInt();
-        } while (cantDenoms <= 0);
+        } while (cantDenoms <= 1);
 
         int denoms[] = new int[cantDenoms];
 
