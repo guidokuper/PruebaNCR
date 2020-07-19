@@ -8,7 +8,6 @@ public class PuntoUno {
         Scanner myObj = new Scanner(System.in);
         int vuelto;
         int denom;
-        List<Integer> denomsPosibles = Arrays.asList( 5, 10, 20, 50, 100 );
 
         do {
             System.out.println("Ingrese el vuelto");
@@ -26,7 +25,7 @@ public class PuntoUno {
                 myObj.next();
             }
             denom = myObj.nextInt();
-        } while (!denomsPosibles.contains(denom));
+        } while (denom <= 0);
 
         obtenerRedondeo(vuelto, denom);
 

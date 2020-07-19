@@ -8,7 +8,6 @@ public class PuntoDos {
         Scanner myObj = new Scanner(System.in);
         int vuelto;
         int cantDenoms;
-        List<Integer> denomsPosibles = Arrays.asList(5, 10, 20, 50, 100);
 
         do {
             System.out.println("Ingrese el vuelto");
@@ -26,7 +25,7 @@ public class PuntoDos {
                 myObj.next();
             }
             cantDenoms = myObj.nextInt();
-        } while (cantDenoms <= 0 || cantDenoms > 5);
+        } while (cantDenoms <= 0);
 
         int denoms[] = new int[cantDenoms];
 
@@ -40,7 +39,7 @@ public class PuntoDos {
                     myObj.next();
                 }
                 denoms[i] = myObj.nextInt();
-            } while (!denomsPosibles.contains(denoms[i]));
+            } while (denoms[i] <= 0);
 
         }
 
@@ -52,6 +51,7 @@ public class PuntoDos {
         double multip = (double) vuelto / denoms[0];
         double decimal = multip % 1;
         double entero = multip - decimal;
+        int denomElegida = denoms[0];
 
         if (decimal > 0) {
             ++entero;
@@ -72,11 +72,12 @@ public class PuntoDos {
 
             if (redondeoDos <= redondeo) {
                 redondeo = redondeoDos;
+                denomElegida = denoms[i];
             }
 
         }
 
-        System.out.println("El redondeo a favor del cliente es " + redondeo);
+        System.out.println("El redondeo a favor del cliente es " + redondeo + " con denominación " + denomElegida);
 
     }
 
